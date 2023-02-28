@@ -7,3 +7,4 @@ echo "Already UTF-8"
 else
 iconv -f $en -t UTF-8 -o text.txt text.txt
 fi
+wc -l text.txt

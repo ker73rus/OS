@@ -7,15 +7,22 @@ for i in $p;do
 	len=${#i}
 	cur=0
 	for((j=0;j<$len;j++));do
-		for l in letters;do
-			if [$l==${i:$j:1}] ;then
+		for l in $letters;do
+			echo $l
+			if [ "A"="${i:$j:1}" ] ;then
 				let cur++
+				echo $l
+				echo ${i:$j:1}
+				echo [ "$l"=="${i:$j:1}" ]
+				echo $cur
 			fi
 		done
-		if [$cur > $maxw] ; then
-			cur=$maxw
+		if [ $cur > $maxw ] ; then
+			maxw=$cur
 			max=$i
+			echo $max
 		fi
 	done
 done
 done <text.txt
+echo $max

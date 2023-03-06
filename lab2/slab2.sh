@@ -7,17 +7,15 @@ for i in $p;do
 	len=${#i}
 	cur=0
 	for((j=0;j<$len;j++));do
-		for l in $letters;do
-			echo $l
-			if [ "A"="${i:$j:1}" ] ;then
+		for l in "${letters[@]}"
+		do
+			if [ "$l"=="${i:$j:1}" ]
+			then
 				let cur++
-				echo $l
-				echo ${i:$j:1}
-				echo [ "$l"=="${i:$j:1}" ]
-				echo $cur
 			fi
 		done
-		if [ $cur > $maxw ] ; then
+		if [ $cur -gt $maxw ]
+		then
 			maxw=$cur
 			max=$i
 			echo $max

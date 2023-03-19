@@ -9,7 +9,7 @@ for i in $p;do
 	for((j=0;j<$len;j++));do
 		for l in "${letters[@]}"
 		do
-			if [ "$l"=="${i:$j:1}" ]
+			if [ "$l" = "${i:$j:1}" ]
 			then
 				let cur++
 			fi
